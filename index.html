@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TillyHacks</title>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <!-- Ensure the favicon.ico file is in the same directory as this HTML file -->
+  <style>
+    body {
+      margin: 0;
+      font-family: "Courier New", Courier, monospace;
+      background: white;
+      color: #111;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: #fff;
+      border-bottom: 2px solid #eee;
+    }
+    header img {
+      height: 60px;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      color: #a100ff;
+      margin-top: 2rem;
+    }
+    .schedule {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
+      margin-top: 1rem;
+      border-top: 1px solid #ddd;
+    }
+    .schedule-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .time {
+      font-weight: bold;
+      color: #555;
+    }
+    .event {
+      color: #000;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 1rem;
+      border-top: 2px solid #eee;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    h1 {
+      overflow: hidden;
+      border-right: 0.15em solid #a100ff;
+      white-space: nowrap;
+      width: 0; /* Start with no width */
+      letter-spacing: 0.15em;
+      animation: typing 3.5s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 26ch; /* Stop at the length of the text */
+      }
+    }
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #a100ff;
+      }
+    }
+    .faq {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+      align-items: start; /* Ensure independent scaling of columns */
+    }
+    .faq-item {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 1rem;
+      background: #f9f9f9;
+      cursor: pointer;
+      transition: all 0.3s ease; /* Smooth transition for scaling */
+    }
+    .faq-item .answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease; /* Smooth transition for dropdown */
+    }
+    .faq-item.open {
+      transform: scale(1.02); /* Slightly scale the item when open */
+    }
+    .faq-item.open .answer {
+      max-height: 500px; /* Allow enough space for the answer */
+    }
+    .sponsors {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 1rem;
+      border-top: 2px solid #eee;
+    }
+    .sponsor-logos {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .sponsor-logos img {
+      max-height: 80px;
+      max-width: 150px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Screenshot 2025-04-13 233956.png" alt="TillyHacks Logo" />
+  </header>
+  <main>
+    <h1>Welcome to TillyHacks</h1>
+    <p><em>Date tbd</em></p>
+    <p>This is a placeholder description for TillyHacks, the coolest hackathon around. Expect fun, innovation, and lots of purple.</p>
+
+    <h2>Schedule</h2>
+    <div class="schedule">
+      <div class="schedule-item">
+        <div class="time">9:00 AM</div>
+        <div class="event">Opening Ceremony</div>
+      </div>
+      <div class="schedule-item">
+        <div class="time">10:00 AM</div>
+        <div class="event">Hacking Begins</div>
+      </div>
+      <div class="schedule-item">
+        <div class="time">1:00 PM</div>
+        <div class="event">Lunch Break</div>
+      </div>
+      <div class="schedule-item">
+        <div class="time">3:00 PM</div>
+        <div class="event">Workshop: Web Dev 101</div>
+      </div>
+      <div class="schedule-item">
+        <div class="time">6:00 PM</div>
+        <div class="event">Dinner</div>
+      </div>
+      <div class="schedule-item">
+        <div class="time">9:00 PM</div>
+        <div class="event">Game Night</div>
+      </div>
+      <div class="schedule-item">
+        <div class="time">9:00 AM (Next Day)</div>
+        <div class="event">Project Submissions Due</div>
+      </div>
+      <div class="schedule-item">
+        <div class="time">10:00 AM</div>
+        <div class="event">Judging Starts</div>
+      </div>
+      <div class="schedule-item">
+        <div class="time">12:00 PM</div>
+        <div class="event">Closing Ceremony & Awards</div>
+      </div>
+    </div>
+
+    <h2>FAQ</h2>
+    <div class="faq">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="question">What is TillyHacks?</div>
+        <div class="answer">TillyHacks is a hackathon where creativity meets innovation.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="question">Who can participate?</div>
+        <div class="answer">Anyone with a passion for technology and innovation!</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="question">What should I bring?</div>
+        <div class="answer">Bring your laptop, charger, and lots of energy!</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="question">Is there a participation fee?</div>
+        <div class="answer">No, TillyHacks is completely free to attend.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="question">Will there be food?</div>
+        <div class="answer">Yes, meals and snacks will be provided throughout the event.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="question">Can I participate remotely?</div>
+        <div class="answer">Currently, TillyHacks is an in-person event only.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="question">Are there prizes?</div>
+        <div class="answer">Yes, there are exciting prizes for the best projects!</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="question">How do I register?</div>
+        <div class="answer">Registration details will be shared soon. Stay tuned!</div>
+      </div>
+    </div>
+
+    <h2>Sponsors</h2>
+    <div class="sponsors">
+      <p>Thank you to our amazing sponsors for making this event possible! | Want to sponsor peep the <a href="/prospectus.pdf">prospectus</a>, thank you!</p>
+      <div class="sponsor-logos">
+        <img src="sponsor1.png" alt="Sponsor 1" />
+        <img src="sponsor2.png" alt="Sponsor 2" />
+        <img src="sponsor3.png" alt="Sponsor 3" />
+        <img src="sponsor4.png" alt="Sponsor 4" />
+      </div>
+    </div>
+  </main>
+  <footer>
+    © 2025 TillyHacks. All rights reserved.
+  </footer>
+</body>
+</html>

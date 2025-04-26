@@ -8,12 +8,10 @@
   <style>
     :root {
       --primary: #a100ff;
-      --bg-light: #fff;
-      --bg-dark: #111;
-      --text-light: #111;
-      --text-dark: #eee;
-      --border-light: #eee;
-      --border-dark: #444;
+      --bg: #f8f9fa;
+      --text: #2d2d2d;
+      --border: #e0e0e0;
+      --card-bg: #ffffff;
       --font-main: 'Courier New', monospace;
       --font-header: 'Cascadia Code', monospace;
     }
@@ -21,24 +19,14 @@
     body {
       margin: 0;
       font-family: var(--font-main);
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
+      background-color: var(--bg);
+      color: var(--text);
     }
 
     header {
-      background: inherit;
-      border-bottom: 2px solid var(--border-light);
+      background: var(--card-bg);
+      border-bottom: 2px solid var(--border);
       padding: 1rem;
-    }
-
-    body.dark header {
-      border-bottom-color: var(--border-dark);
     }
 
     .container {
@@ -59,14 +47,6 @@
     }
 
     .logo span {
-      color: var(--primary);
-    }
-
-    #mode-toggle {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
       color: var(--primary);
     }
 
@@ -97,17 +77,29 @@
       gap: 1rem;
     }
 
+    .faq {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .faq-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
     .schedule-item, .faq-item {
-      border: 1px solid var(--border-light);
+      border: 1px solid var(--border);
       padding: 1rem;
       border-radius: 5px;
-      background: #f9f9f9;
+      background: var(--card-bg);
       transition: all 0.3s ease;
     }
 
-    body.dark .schedule-item, body.dark .faq-item {
-      background: #1a1a1a;
-      border-color: var(--border-dark);
+    .faq-item {
+      align-self: start;
+      height: fit-content;
     }
 
     .faq-item .answer {
@@ -131,13 +123,81 @@
     footer {
       text-align: center;
       padding: 2rem 0;
-      border-top: 2px solid var(--border-light);
-      color: #888;
+      border-top: 2px solid var(--border);
+      color: #666;
     }
 
-    body.dark footer {
-      border-top-color: var(--border-dark);
-      color: #aaa;
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .social-links a {
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0.5rem;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+      }
+
+      h1.typing {
+        font-size: 1.5rem;
+      }
+
+      @keyframes typing {
+        from { width: 0; }
+        to { width: 22ch; } 
+      }
+
+      .faq {
+        flex-direction: column; 
+      }
+
+      .schedule-item, .faq-item {
+        padding: 0.75rem;
+      }
+
+      section {
+        margin-top: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      h1.typing {
+        font-size: 1.2rem;
+      }
+
+      .social-links {
+        gap: 0.5rem;
+      }
+
+      .social-links img {
+        width: 20px;
+      }
+
+      .sponsor-logos img {
+        height: 40px;
+      }
     }
   </style>
 </head>
@@ -145,49 +205,54 @@
   <header>
     <div class="container header-content">
       <div class="logo"><span>Tilly</span>Hacks</div>
-      <button id="mode-toggle">🌙</button>
+      <div class="social-links">
+        <a href="#" target="_blank"><img src="icons8-instagram.svg" alt="Instagram" width="25" /></a>
+        <a href="#" target="_blank"><img src="icons8-discord.svg" alt="Discord" width="25" /></a>
+      </div>
     </div>
   </header>
   <main class="container">
     <h1 class="typing">Welcome to TillyHacks</h1>
     <p><em>Date TBA</em></p>
-    <p>A hackathon where creativity meets code. Join us for fun, innovation, and a splash of purple.</p>
+    <p>Hackathon at tilly blah blah blah</p>
 
     <section>
       <h2>Schedule</h2>
       <div class="schedule">
+        <div class="schedule-item"><strong>8:00 AM</strong> - Registration & Breakfast</div>
         <div class="schedule-item"><strong>9:00 AM</strong> - Opening Ceremony</div>
         <div class="schedule-item"><strong>10:00 AM</strong> - Hacking Begins</div>
         <div class="schedule-item"><strong>1:00 PM</strong> - Lunch Break</div>
-        <div class="schedule-item"><strong>3:00 PM</strong> - Workshop: Web Dev 101</div>
+        <div class="schedule-item"><strong>3:00 PM</strong> - Workshops</div>
         <div class="schedule-item"><strong>6:00 PM</strong> - Dinner</div>
-        <div class="schedule-item"><strong>9:00 PM</strong> - Game Night</div>
-        <div class="schedule-item"><strong>9:00 AM (Next Day)</strong> - Project Submissions Due</div>
-        <div class="schedule-item"><strong>10:00 AM</strong> - Judging Starts</div>
-        <div class="schedule-item"><strong>12:00 PM</strong> - Closing Ceremony & Awards</div>
+        <div class="schedule-item"><strong>8:00 PM</strong> - Networking Session</div>
+        <div class="schedule-item"><strong>10:00 PM</strong> - Wrap Up</div>
       </div>
     </section>
 
     <section>
       <h2>FAQ</h2>
       <div class="faq">
-        <div class="faq-item" onclick="this.classList.toggle('open')">
-          <strong>What is TillyHacks?</strong>
-          <div class="answer">An inclusive hackathon for creators and tinkerers of all levels.</div>
+        <div class="faq-column">
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>What is TillyHacks?</strong>
+            <div class="answer">A hackathon bru idk.</div>
+          </div>
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>Who can participate?</strong>
+            <div class="answer">Anyone interested in tech, coding, or making cool things!</div>
+          </div>
         </div>
-        <div class="faq-item" onclick="this.classList.toggle('open')">
-          <strong>Who can participate?</strong>
-          <div class="answer">Anyone interested in tech, coding, or making cool things!</div>
+        <div class="faq-column">
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>What should I bring?</strong>
+            <div class="answer">Your laptop and charger</div>
+          </div>
         </div>
-        <!-- Add more FAQs similarly -->
       </div>
     </section>
 
-    <section>
-      <h2>Date Voting</h2>
-      <p>Help us decide the best date! Fill out the form below:</p>
-      <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/viewform?embedded=true" width="100%" height="600" style="border:none;border-radius:12px;"></iframe>
-    </section>
+    
 
     <section>
       <h2>Sponsors</h2>
@@ -195,7 +260,6 @@
       <div class="sponsor-logos">
         <img src="sponsor1.png" alt="Sponsor 1" height="50" />
         <img src="sponsor2.png" alt="Sponsor 2" height="50" />
-        <!-- More sponsors -->
       </div>
       <p>Want to contribute?</p>
       <iframe src="https://hcb.hackclub.com/donations/start/tillyhacks" width="100%" height="512" style="border:none;border-radius:12px;"></iframe>
@@ -203,30 +267,11 @@
   </main>
 
   <footer>
-    <div>
-      <img src="icons8-instagram.svg" alt="Instagram" width="25" />
-      <img src="icons8-discord.svg" alt="Discord" width="25" />
+    <div class="social-links">
+      <a href="#" target="_blank"><img src="icons8-instagram.svg" alt="Instagram" width="25" /></a>
+      <a href="#" target="_blank"><img src="icons8-discord.svg" alt="Discord" width="25" /></a>
     </div>
     <p>&copy; 2025 TillyHacks. All rights reserved.</p>
   </footer>
-
-  <script>
-    const toggle = document.getElementById("mode-toggle");
-    const body = document.body;
-
-    function toggleTheme() {
-      body.classList.toggle("dark");
-      localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
-      toggle.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
-    }
-
-    toggle.addEventListener("click", toggleTheme);
-
-    // Initialize theme
-    if (localStorage.getItem("theme") === "dark") {
-      body.classList.add("dark");
-      toggle.textContent = "☀️";
-    }
-  </script>
 </body>
 </html>

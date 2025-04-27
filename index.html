@@ -5,223 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TillyHacks</title>
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-  <style>
-    :root {
-      --primary: #a100ff;
-      --bg: #1a1a1a;
-      --text: #e0e0e0;
-      --border: #333333;
-      --card-bg: #242424;
-      --font-main: 'Courier New', monospace;
-      --font-header: 'Cascadia Code', monospace;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-main);
-      background-color: var(--bg);
-      color: var(--text);
-    }
-
-    header {
-      background: var(--bg);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-      padding: 1rem;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: var(--font-header);
-      font-size: 2.5rem;
-    }
-
-    .logo span {
-      color: var(--primary);
-    }
-
-    h1.typing {
-      font-size: 2rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid var(--primary);
-      animation: 
-        typing 2s steps(30) 0.5s 1 normal both,
-        blink 0.75s steps(1) infinite;
-      width: 0;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 26ch; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    section {
-      margin-top: 2rem;
-    }
-
-    .schedule, .faq {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .faq {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .faq-column {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .schedule-item, .faq-item {
-      border: 1px solid var(--border);
-      padding: 1rem;
-      border-radius: 5px;
-      background: var(--card-bg);
-      transition: all 0.3s ease;
-    }
-
-    .faq-item {
-      align-self: start;
-      height: fit-content;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 1rem;
-      cursor: pointer;
-      width: 100%;
-      box-sizing: border-box;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .faq-item .answer {
-      max-height: 0;
-      opacity: 0;
-      padding-top: 0;
-      margin-top: 0;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .faq-item.open .answer {
-      max-height: 500px;
-      opacity: 1;
-      padding-top: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .sponsor-logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      border-top: 2px solid var(--border);
-      color: #999;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .social-links a {
-      opacity: 0.8;
-      transition: opacity 0.3s;
-    }
-
-    .social-links a:hover {
-      opacity: 1;
-    }
-
-    .social-links img {
-      filter: brightness(0) invert(1);
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 0.5rem;
-      }
-
-      .logo {
-        font-size: 1.8rem;
-      }
-
-      h1.typing {
-        font-size: 1.5rem;
-      }
-
-      @keyframes typing {
-        from { width: 0; }
-        to { width: 22ch; } 
-      }
-
-      .faq {
-        flex-direction: column; 
-        grid-template-columns: 1fr;
-      }
-
-      .schedule-item, .faq-item {
-        padding: 0.75rem;
-      }
-
-      section {
-        margin-top: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.75rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .logo {
-        font-size: 1.5rem;
-      }
-
-      h1.typing {
-        font-size: 1.2rem;
-      }
-
-      .social-links {
-        gap: 0.5rem;
-      }
-
-      .social-links img {
-        width: 20px;
-      }
-
-      .sponsor-logos img {
-        height: 40px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -234,14 +18,13 @@
     </div>
   </header>
   <main class="container">
-    <h1 class="typing">Welcome to TillyHacks</h1>
-    <p><em>Date TBA</em></p>
-    <p>Hackathon at tilly blah blah blah</p>
+    <h1 class="typing">Welcome to TillyHacks!</h1>
+    <p>Northern Virginia • MM-DD-YY - MM-DD-YY</p>
 
     <section>
       <h2>Schedule</h2>
       <div class="schedule">
-        <div class="schedule-item"><strong>8:00 AM</strong> - Registration & Breakfast</div>
+        <div class="schedule-item"><strong>8:00 AM</strong> - Check-in & Breakfast</div>
         <div class="schedule-item"><strong>9:00 AM</strong> - Opening Ceremony</div>
         <div class="schedule-item"><strong>10:00 AM</strong> - Hacking Begins</div>
         <div class="schedule-item"><strong>1:00 PM</strong> - Lunch Break</div>
@@ -256,24 +39,97 @@
       <h2>FAQ</h2>
       <div class="faq">
         <div class="faq-column">
+          
           <div class="faq-item" onclick="this.classList.toggle('open')">
-            <strong>What is TillyHacks?</strong>
-            <div class="answer">A hackathon bru idk.</div>
+            <strong>What is a hackathon?</strong>
+            <div class="answer">
+              A hackathon is a fun, hands-on event where participants come together to build creative tech projects, like apps, games, websites, or even hardware. It’s all about learning new skills, collaborating, and bringing your ideas to life.
+            </div>
           </div>
+    
           <div class="faq-item" onclick="this.classList.toggle('open')">
             <strong>Who can participate?</strong>
-            <div class="answer">Anyone interested in tech, coding, or making cool things!</div>
+            <div class="answer">
+              Anyone interested in tech, coding, or building cool things! We welcome all experience levels — beginners included.
+            </div>
           </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>Where is it held?</strong>
+            <div class="answer">
+              The event takes place at Chantilly High School, a secure location with limited access. Only registered attendees, approved staff, and authorized adults may enter the event area.
+            </div>
+          </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>Are there teams?</strong>
+            <div class="answer">
+              Yes! You can bring friends and team up with them. If you don't have a team, don't worry! We'll help you find one at the event, or you can find one in the #find-a-team channel of the Discord.            </div>
+          </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>How do I sign up?</strong>
+            <div class="answer">
+              [Log in](authlink.here), and fill out the forms in your dashboard.
+            </div>
+          </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>Are there prizes?</strong>
+            <div class="answer">
+              Yes! We offer prizes (not yet decided what exactly the prizes will be) for categories like Best Beginner Hack, Most Creative Project, and more. However, we believe that the best reward is the experience and what you build.
+            </div>
+          </div>
+    
         </div>
+    
         <div class="faq-column">
+    
           <div class="faq-item" onclick="this.classList.toggle('open')">
             <strong>What should I bring?</strong>
-            <div class="answer">Your laptop and charger</div>
+            <div class="answer">
+              Bring your laptop, charger, headphones, a water bottle, and anything else you personally need for the day (meds, comfort items, etc.). We’ll provide meals, snacks, Wi-Fi, power strips, and more!
+            </div>
           </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>What if I have dietary restrictions?</strong>
+            <div class="answer">
+              No problem! Just let us know during registration — we’ll make sure everyone has food options that work for them.
+            </div>
+          </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>Is it free?</strong>
+            <div class="answer">
+              Yes! Registration, food, swag, workshops, and all activities are completely free for all participants.
+            </div>
+          </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>Will there be adult supervision?</strong>
+            <div class="answer">
+              Yes. Staff and volunteers will be on-site and actively supervising for the entire 12-hour event. Students are never left unsupervised.
+            </div>
+          </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>Do parents need to stay?</strong>
+            <div class="answer">
+              No — parents are not required to stay. They’re welcome to attend check-in. Students must be checked in and out by a guardian unless a signed waiver allows them to leave independently.
+            </div>
+          </div>
+    
+          <div class="faq-item" onclick="this.classList.toggle('open')">
+            <strong>How can I contact the organizers?</strong>
+            <div class="answer">
+              You can reach us anytime at <a href="mailto:hello@tillyhacks.org">hello@tillyhacks.org</a> or message us on Discord (dsc users here idk). For urgent questions during the event, call or text us at 671-337-6969.
+            </div>
+          </div>
+    
         </div>
       </div>
     </section>
-
     
 
     <section>

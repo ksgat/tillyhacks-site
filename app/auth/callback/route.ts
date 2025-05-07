@@ -38,7 +38,7 @@ export async function GET(request: Request) {
   }
 
   // Get the origin from the request URL to ensure correct redirection
-  const origin = requestUrl.origin.includes("localhost") ? requestUrl.origin : "https://dev-theta-eight.vercel.app"
+  const origin = requestUrl.origin.includes("localhost") ? requestUrl.origin : "https://tillyhacks.org"
 
   // Redirect to the home page
   return NextResponse.redirect(`${origin}/`)

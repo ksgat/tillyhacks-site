@@ -71,7 +71,7 @@ export default function Login() {
     try {
       // Get the current site URL dynamically
       const currentOrigin =
-        typeof window !== "undefined" ? window.location.origin : "https://dev-theta-eight.vercel.app"
+        typeof window !== "undefined" ? window.location.origin : "https://tillyhacks.org"
 
       console.log("Using redirect URL:", `${currentOrigin}/api/auth/callback`)
 
